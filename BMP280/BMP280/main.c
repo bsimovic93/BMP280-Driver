@@ -24,26 +24,26 @@ void BurstRead(uint8**,sint8,uint8);
 
 int main(void)
 {
-	/*
+	
 	char str[32];
 
 	Init_SPI();
-	*/
+	
 	
 	DDRD |= 0xFF;
 	
-	/*
+	
 	Init_BPM280();
 	
 	_delay_ms(1);
 	
-	PORTD = ReadTemp();
-	*/
+	
+	
 	
     while (1) 
     {
-		PORTD |= 0xff;
-		//8 bit value of the temperature
+		//Read the temperature every 500ms
+	    	PORTD = ReadTemp();
 		_delay_ms(500);
     }
 }
